@@ -1,0 +1,21 @@
+{
+  "name": "uselagoon/typo3_lagoon_logs",
+  "description": "Typo3 logging stack for Lagoon projects",
+  "type": "project",
+  "license": "Apache2",
+  "autoload": {
+    "psr-4": {
+      "Uselagoon\\Typo3LagoonLogs\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Blaize Kaye",
+      "email": "blaize.kaye@amazee.io"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "monolog/monolog": "^2.0|^3.0"
+  }
+}
