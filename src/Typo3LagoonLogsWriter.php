@@ -2,6 +2,7 @@
 
 namespace Uselagoon\Typo3LagoonLogs;
 
+use Monolog\Level;
 use TYPO3\CMS\Core\Log\LogRecord;
 use TYPO3\CMS\Core\Log\Writer\WriterInterface;
 
@@ -35,7 +36,7 @@ class Typo3LagoonLogsWriter implements WriterInterface
 
     public function writeLog(LogRecord $record)
     {
-        $this->logger->info($record->getMessage());
+        $this->logger->log($record->getLevel(), (string)$record);
     }
 
 
