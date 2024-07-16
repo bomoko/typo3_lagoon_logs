@@ -1,6 +1,6 @@
 <?php
 
-namespace Uselagoon\Typo3LagoonLogs;
+namespace Bomoko\Typo3LagoonLogs;
 
 use Monolog\Level;
 use TYPO3\CMS\Core\Log\LogRecord;

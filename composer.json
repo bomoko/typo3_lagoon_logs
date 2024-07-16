@@ -1,11 +1,11 @@
 {
-  "name": "uselagoon/typo3_lagoon_logs",
+  "name": "bomoko/typo3_lagoon_logs",
   "description": "Typo3 logging stack for Lagoon projects",
   "type": "project",
   "license": "Apache2",
   "autoload": {
     "psr-4": {
-      "Uselagoon\\Typo3LagoonLogs\\": "src/"
+      "Bomoko\\Typo3LagoonLogs\\": "src/"
     }
   },
   "authors": [
