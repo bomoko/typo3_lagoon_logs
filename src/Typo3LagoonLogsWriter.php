@@ -32,26 +32,6 @@ class Typo3LagoonLogsWriter implements WriterInterface
 
     const LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES = 15000;
 
-    const LAGOON_LOGS_FALLBACK_LINE_FORMAT = "LAGOON LOGS FALLBACK: [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n";
-
-    public function writeLog(LogRecord $record)
-    {
-        $this->logger->log($record->getLevel(), (string)$record);
-    }
-
-
-
-    /**
-     * Interrogates environment to get the correct process index for logging
-     *
-     * @return string
-     */
-    public static function getHostProcessIndex() {
-        return implode('-', [
-            getenv('LAGOON_PROJECT') ?: self::LAGOON_LOGS_DEFAULT_LAGOON_PROJECT,
-            getenv('LAGOON_GIT_SAFE_BRANCH') ?: self::LAGOON_LOGS_DEFAULT_SAFE_BRANCH,
-        ]);
-    }
 
     public function __construct()
     {
@@ -74,4 +54,24 @@ class Typo3LagoonLogsWriter implements WriterInterface
 
         $this->logger = $logger;
     }
+
+    public function writeLog(LogRecord $record)
+    {
+        $this->logger->log($record->getLevel(), (string)$record);
+    }
+
+
+    /**
+     * Interrogates environment to get the correct process index for logging
+     *
+     * @return string
+     */
+    public static function getHostProcessIndex() {
+        return implode('-', [
+            getenv('LAGOON_PROJECT') ?: self::LAGOON_LOGS_DEFAULT_LAGOON_PROJECT,
+            getenv('LAGOON_GIT_SAFE_BRANCH') ?: self::LAGOON_LOGS_DEFAULT_SAFE_BRANCH,
+        ]);
+    }
+
+
 }
