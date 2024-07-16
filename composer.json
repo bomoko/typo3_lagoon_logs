@@ -2,7 +2,7 @@
   "name": "bomoko/typo3_lagoon_logs",
   "description": "Typo3 logging stack for Lagoon projects",
   "type": "project",
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "autoload": {
     "psr-4": {
       "Bomoko\\Typo3LagoonLogs\\": "src/"
